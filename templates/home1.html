@@ -1,0 +1,42 @@
+{% extends "layout1.html"%}
+{%block content1%}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 form">
+            {%from "_macros.html" import render_field%}
+            <form action="/resultado" method="post">
+                <div class="row">
+                    <div class="control-group col-md-3">
+                        <br><br>
+                        {{render_field(form1.radio)}}
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="from-group col-md-8">
+                        <br>
+                        <br>
+                        {{render_field(form1.busqueda)}}
+                        <input class="btn btn-outline-info" type="submit" value="Buscar">
+                    </div>
+                </div>
+                <input class="btn btn-outline-info hidden" type="submit" value="Buscar">
+            </form>
+        </div>
+        <div class="col-md-6 form">
+            {%from "_macros.html" import render_field%}
+            <form action="/" method="post">
+                <div class="from-group">
+                    <br>
+                    {{render_field(form.ingles)}}
+                    {{render_field(form.español)}}
+                </div>
+                <input class="btn btn-outline-success" type="submit" value="Guardar">
+            </form>
+        </div>
+    </div>
+</div>
+<!--script>
+    function nuevamente() {
+        window.location.replace("https://http://127.0.0.1:3000/");
+    }
+</script-->
+{%endblock%}
